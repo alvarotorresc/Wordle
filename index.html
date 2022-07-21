@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css" />
+    <title>wordle</title>
+  </head>
+  <body>
+    <header>
+      <!--Este primer div va a contener el titulo y la explicacion de las reglas del juego-->
+      <div class="head">
+        <h1>Wordle</h1>
+        <h2>Explicacion de las reglas del juego</h2>
+      </div>
+    </header>
+    <div id="content">
+      <!--Este segundo div va a contener las palabras aceptadas-->
+      <div class="words"></div>
+      <!--Este tercer div va a contener el input y los botones-->
+      <div id="play">
+        <form id="write">
+        <input id="accept" type="text" name="accept"  placeholder="escribe una palabra"/>
+        <input id="send" type="submit" value="Aceptar"></input>
+        <button>Resetear</button>
+        </form>
+      </div>
+
+      <!--Este cuarto div va a contener el listado de los intentos-->
+      <div id="tries">
+        <h3>Lista de palabras intentadas</h3>
+        <ul id="list">
+
+        </ul>
+      </div>
+    </div>
+    <!--El footer va a contener el pie de pagina-->
+    <footer>
+      <p>Francisco Garcia - TeachTech. 2022</p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
