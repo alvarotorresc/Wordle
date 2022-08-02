@@ -8,9 +8,14 @@
   <body>
     <header>
       <!--Este primer div va a contener el titulo y la explicacion de las reglas del juego-->
-      <div class="head">
+      <div id="head">
         <h1>Wordle</h1>
+        <div id="rules">
         <h2>Explicacion de las reglas del juego</h2>
+        <p>La mecánica del juego es simple: tendrás seis intentos para
+           adivina la palabra secreta de cinco letras de cada día.
+        </p>
+      </div>
       </div>
     </header>
     <div id="content">
@@ -21,18 +26,19 @@
         <form id="write">
         <input id="accept" type="text" name="accept"  placeholder="escribe una palabra"/>
         <input id="send" type="submit" value="Aceptar"></input>
-        <button>Resetear</button>
         </form>
+        <button id="reset" >Resetear juego</button>
       </div>
 
       <!--Este cuarto div va a contener el listado de los intentos-->
       <div id="tries">
-        <h3>Lista de palabras intentadas</h3>
+        <h3>Palabras válidas intentadas</h3>
         <ul id="list">
 
         </ul>
       </div>
     </div>
+
     <!--El footer va a contener el pie de pagina-->
     <footer>
       <p>Francisco Garcia - TeachTech. 2022</p>
