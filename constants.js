@@ -1,1 +1,0 @@
-const words = ["padre", "beber", "playa", "poeta", "rosas"];

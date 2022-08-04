@@ -1,5 +1,23 @@
-import { words } from "./constants"
-import {validWords} from "./utils"
+let words = ["padre", "beber", "playa", "poeta", "rosas"];
+
+let attempts = 0
+
+function validWords(attempt) {
+  if (attempt === "") {
+    console.log(attempt);
+    alert("No puedes dejar el campo vacio");
+    return false;
+  }
+  if (attempt.length > 5) {
+    alert("la palabra no puede tener mas de 5 letras");
+    return false;
+  }
+  if (attempt.length < 5) {
+    alert("la palabra no puede tener menos de 5 letras");
+    return false;
+  }
+  return true;
+}
 
 let game = {
   randomWord: "",
@@ -15,11 +33,15 @@ const start = () => {
 
 const check = event => {
   event.preventDefault();
+
   const gameAttempt = document.getElementById("accept").value;
-  addValueToList(gameAttempt);
   const valid = validWords(gameAttempt);
+  document.getElementById("accept").value = "";
 
   if (!valid) return;
+
+  addValueToList(gameAttempt);
+  attempts += 1
 
   if (gameAttempt === game.randomWord) {
     alert("Has acertado!");
@@ -27,7 +49,10 @@ const check = event => {
     alert("No has acertado! Intentalo de nuevo");
   }
 
-  document.getElementById("accept").value = "";
+  if (attempts === 6){
+    attempts = 0
+    resetGame()
+  }
 }
 
 const addValueToList = item => {
@@ -39,6 +64,9 @@ const addValueToList = item => {
 }
 
 const resetGame = () => {
+  alert(`La palabra era ${game.randomWord}`)
+  alert("Has perdido! El juego va a reiniciarse")
+  words = words.filter(item => item !== game.randomWord)
   game.randomWord = words[Math.floor(Math.random() * words.length)];
   document.getElementById("list").innerHTML = "";
 }
